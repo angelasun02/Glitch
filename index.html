@@ -4,15 +4,49 @@
         <meta charset="utf-8"><!--charset: character encoding capable of encoding all characters on the web  -->
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><!--for browser compatibility: choose rendering engine to view the page in an correct view (for old ver. IE)  -->
 
-       <title>Glitch</title>
+        <title>Glitch</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <style>
             section{display: flex;
                 flex-direction: row;}
+            main{left: 15vw;
+                top: 20vh;
+                position: fixed;
+                z-index: 10;}
+            .t1,.t2,.t3,.t4,.t5,.t6{background-color: white;
+                color: black;
+                font-size: 24px;
+                margin-bottom: -10px;
+                padding-left: 15px;
+                padding-right: 70px;
+                padding-top: 2px;
+                padding-bottom: 2px;}
+            .note{backgroun-color: none;
+                color: black;
+                margin-bottom: -15px;}
+            .footnote{top: 85vh;
+                margin-left: 50vw;
+                position: fixed;
+                z-index: 10;}
         </style>
 
 </head>
-<body>
-<section>
+    <body>
+    <main>
+            <p class="t1"></p>
+            <p class="t2"></p>
+            <p class="t3"></p>
+            <p class="t4"></p>
+            <p class="t5"></p>
+            <p class="t6"></p>
+    </main>
+
+    <main class="footnote">
+        <p class="note">@https://www.googlepoetry.nl/poem/12</p>
+        <p class="note">Sources form Google Poetry, Mindful by Mry Oliver. </p>
+    </main>
+
+    <section>
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
@@ -163,7 +197,7 @@
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
-</section>
+    </section>
 
         <script type="text/javascript">
             var colors = ['#8944a3','#b94a3e','#FFFFFF','#cd5c5c','#F08080','#FA8072','#432424','#866E6E','#A45757','#8E2626','#380C0C','#3E666A','#0E5B62','#65BBC3','#92298D','#5C2259','#1193A0','#225C4A','#0B2A2D','#BEE8EC','#905F8E','#5F9090','#5F9073','#5F906A','#5F5F90'];
@@ -177,7 +211,38 @@
             var url = window.location.href;
             setTimeout(function(){
                 window.location.href=url;
-            },3000);
+            },10000);
+
+
+            console.log('working.');
+            var t1 = ["Every day,","It is what I was born for -","In joy,","Nor am I talking","The daily presentations.","As these -"];
+            var t2 = ["I see or hear,","To look, to listen,","And acclamation.","About the exceptional,","Oh, good scholar,","The untrimmable light,"];
+            var t3 = ["Something,","to lose myself,","The fearful, the dreadful,","The very extravagant -","I say to myself,","Of the world,"];
+            var t4 = ["That more or less,","That leaves me,","Inside this soft world -","But of the ordinary,","How can you help,","The ocean's shine,"];
+            var t5 = ["Kills me, ","Like a needle,","To instruct myself,","The common, the very drab,","But grow wise,","The prayers that are made,"];
+            var t6 = ["With delight,","In the haystack of light,","Over and over,","The daily presentations.","With such teachings,","....out of grass."]
+            var i = Math.floor(Math.random() * t1.length);
+            console.log(t1[i]);
+            $(document).ready(function(){
+                var t1_element = $('.t1');
+                var t2_element = $('.t2');
+                var t3_element = $('.t3');
+                var t4_element = $('.t4');
+                var t5_element = $('.t5');
+                var t6_element = $('.t6');
+                var random_t1 = t1[Math.floor(Math.random() * t1.length)];
+                var random_t2 = t2[Math.floor(Math.random() * t2.length)];
+                var random_t3 = t3[Math.floor(Math.random() * t3.length)];
+                var random_t4 = t4[Math.floor(Math.random() * t4.length)];
+                var random_t5 = t5[Math.floor(Math.random() * t5.length)];
+                var random_t6 = t6[Math.floor(Math.random() * t6.length)];
+                t1_element.text(random_t1);
+                t2_element.text(random_t2);
+                t3_element.text(random_t3);
+                t4_element.text(random_t4);
+                t5_element.text(random_t5);
+                t6_element.text(random_t6);
+            });
         </script>
-</body>
+    </body>
 </html>
